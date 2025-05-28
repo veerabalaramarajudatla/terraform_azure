@@ -54,8 +54,11 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = var.location
   resource_group_name = var.resource_group_name
   size                = var.vm_size
-  admin_username      = var.admin_username
 
+    admin_ssh_key {
+        username   = var.admin_username
+        public_key = file(var.ssh_key)  # Using the file function here
+  }
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]

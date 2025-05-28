@@ -6,4 +6,5 @@ subnet_name           = "my-subnet"
 subnet_address_prefix = ["10.0.1.0/24"]
 vm_name               = "my-vm"
 vm_size               = "Standard_B1s"
-admin_username        = "azureuser"
+admin_username = "azureuser"
+ssh_key = "C:/Users/datla/desktop/sshterra_key.pub"

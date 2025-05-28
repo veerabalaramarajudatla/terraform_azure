@@ -41,6 +41,10 @@ variable "vm_size" {
 }
 
 variable "admin_username" {
-  description = "Admin username for the VM"
-  type        = string
+    description = "VM User"
+    type = string
+}
+
+variable "ssh_key" {
+    description = "ssh key"
 }
