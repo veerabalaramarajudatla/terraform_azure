@@ -4,3 +4,7 @@ vnet_name             = "my-vnet"
 vnet_address_space    = "10.0.0.0/16"
 subnet_name           = "my-subnet"
 subnet_address_prefix = ["10.0.1.0/24"]
+vm_name               = "my-vm"
+vm_size               = "Standard_B1s"
+admin_username        = "azureuser"
+ssh_public_key_path   = "~/.ssh/id_rsa.pub"
