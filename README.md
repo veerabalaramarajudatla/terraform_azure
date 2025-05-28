@@ -1,5 +1,6 @@
 # terraform_azure
 
+
 Step 1:
 Created the App Registration with Single Tentant (terraform-ap-using-github)
 
@@ -18,5 +19,9 @@ We will get Client ID, Tentant ID from the App Registration
 
 # Topic Covered
 
--> Resource Group Creation
--> Creation of v-net and sub-net
+--> Resource Group Creation
+
+--> Creation of v-net and sub-net
+
+--> Creation of VM
+
