@@ -14,3 +14,8 @@ Member -> We need to add our Application Name
 
 Step 4:
 We will get Client ID, Tentant ID from the App Registration
+
+------------------------------------------------------------------------------------
+# Topic Covered
+
+-> Resource Creation
