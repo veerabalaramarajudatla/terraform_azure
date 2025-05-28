@@ -24,3 +24,4 @@ We will get Client ID, Tentant ID from the App Registration
 --> Creation of v-net and sub-net
 
 --> Creation of VM
+
