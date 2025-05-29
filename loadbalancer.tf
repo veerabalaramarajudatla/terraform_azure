@@ -1,7 +1,7 @@
 resource "azurerm_public_ip" "lb_pip" {
   name                = "my-lb-pip"
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "lb_pip" {
 resource "azurerm_lb" "my_lb" {
   name                = "my-loadbalancer"
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   sku                 = "Standard"
 
   frontend_ip_configuration {
