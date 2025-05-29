@@ -40,11 +40,12 @@ variable "vm_size" {
   default     = "Standard_B1s"
 }
 
-variable "admin_username" {
-    description = "VM User"
-    type = string
+variable "admin_user_name" {
+  description = "VM admin username"
+  type        = string
 }
 
 variable "ssh_key" {
-    description = "ssh key"
+  description = "Path to the SSH public key"
+  type        = string
 }
