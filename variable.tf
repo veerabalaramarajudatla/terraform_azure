@@ -46,7 +46,7 @@ variable "vm_size" {
 }
 
 variable "admin_user_name" {
-  description = "Admin username for the VM"
+  description = "Admin username for the VMs"
   type        = string
 }
 

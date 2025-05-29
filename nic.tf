@@ -17,7 +17,7 @@ resource "azurerm_network_interface" "nic2" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.subnet.id
+    subnet_id                     = azurerm_subnet.subnet.id  # same subnet as nic1
     private_ip_address_allocation = "Dynamic"
   }
 }
