@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  description = "Name of the resource group"
+  description = "Name of the Resource Group"
   type        = string
 }
 
@@ -10,22 +10,22 @@ variable "location" {
 }
 
 variable "vnet_name" {
-  description = "Name of the virtual network"
+  description = "Name of the Virtual Network"
   type        = string
 }
 
 variable "vnet_address_space" {
-  description = "VNet address space (e.g., 10.0.0.0/16)"
+  description = "Address space for the Virtual Network"
   type        = string
 }
 
 variable "subnet_name" {
-  description = "Name of the subnet"
+  description = "Name of the Subnet"
   type        = string
 }
 
 variable "subnet_address_prefix" {
-  description = "Subnet address prefix (e.g., 10.0.1.0/24)"
+  description = "Address prefix for the Subnet"
   type        = list(string)
 }
 
@@ -35,17 +35,17 @@ variable "vm_name" {
 }
 
 variable "vm_size" {
-  description = "Size of the VM"
+  description = "Size of the Virtual Machine"
   type        = string
   default     = "Standard_B1s"
 }
 
 variable "admin_user_name" {
-  description = "VM admin username"
+  description = "Admin username for the VM"
   type        = string
 }
 
 variable "ssh_key" {
-  description = "Path to the SSH public key"
+  description = "Path to SSH public key file (relative to Terraform root)"
   type        = string
 }
