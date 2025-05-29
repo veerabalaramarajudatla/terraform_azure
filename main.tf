@@ -1,6 +1,6 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "Sample"
+    resource_group_name  = "Demo"
     storage_account_name = "saterragitkvnv"
     container_name       = "containertfkvnv"
     key                  = "prod.terraform.tfstate"
@@ -55,10 +55,10 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name = var.resource_group_name
   size                = var.vm_size
 
-   admin_ssh_key {
-  username   = var.admin_user_name
-  public_key = file(var.ssh_key)  # Reads the public key content from the file path
-}
+  admin_ssh_key {
+    username   = var.admin_user_name
+    public_key = file(var.ssh_key)
+  }
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]
