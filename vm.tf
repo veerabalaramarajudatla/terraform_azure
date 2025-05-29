@@ -1,7 +1,7 @@
 resource "azurerm_linux_virtual_machine" "vm" {
   name                  = var.vm_name
   location              = var.location
-  resource_group_name   = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   size                  = var.vm_size
   admin_username        = var.admin_user_name
   network_interface_ids = [azurerm_network_interface.nic1.id]
@@ -31,7 +31,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 resource "azurerm_linux_virtual_machine" "nvm" {
   name                  = var.nvm_name
   location              = var.location
-  resource_group_name   = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   size                  = var.vm_size
   admin_username        = var.admin_user_name
   network_interface_ids = [azurerm_network_interface.nic2.id]

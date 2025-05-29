@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "nic1" {
   name                = "${var.vm_name}-nic"            # Network Interface 1
   location            = var.location                    # Region for My Infra
-  resource_group_name = var.resource_group_name         # My Resource Group
+  resource_group_name = azurerm_resource_group.rg.name         # My Resource Group
 
   ip_configuration {
     name                          = "internal"
@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "nic1" {
 resource "azurerm_network_interface" "nic2" {
   name                = "${var.nvm_name}-nic"           # Network Interface 2
   location            = var.location                    # Region for My Infra
-  resource_group_name = var.resource_group_name         # My Resource Group
+  resource_group_name = azurerm_resource_group.rg.name        # My Resource Group
 
   ip_configuration {
     name                          = "internal"

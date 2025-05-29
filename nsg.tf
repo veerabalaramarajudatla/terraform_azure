@@ -1,7 +1,7 @@
 resource "azurerm_network_security_group" "nsg" {
   name                = "${var.vm_name}-nsg"          # Network Security Group Name
   location            = var.location                   # Region for our infra
-  resource_group_name = var.resource_group_name        # My Resource Group
+  resource_group_name = azurerm_resource_group.rg.name       # My Resource Group
 
   security_rule {
     name                       = "Allow-SSH"
