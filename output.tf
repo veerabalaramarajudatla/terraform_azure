@@ -15,12 +15,12 @@ output "nvm_id" {
 
 output "vm_private_ip" {
   description = "The private IP address of the first VM"
-  value       = azurerm_network_interface.nic1.private_ip_address
+  value       = azurerm_network_interface.nic1.ip_configuration[0].private_ip_address
 }
 
 output "nvm_private_ip" {
   description = "The private IP address of the second VM"
-  value       = azurerm_network_interface.nic2.private_ip_address
+  value       = azurerm_network_interface.nic2.ip_configuration[0].private_ip_address
 }
 
 output "load_balancer_backend_pool_id" {
