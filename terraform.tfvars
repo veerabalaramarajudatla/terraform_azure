@@ -1,4 +1,4 @@
-resource_group_name   = "my-rg-for-myresource"
+resource_group_name   = "my-rg"
 location              = "East US"
 vnet_name             = "my-vnet"
 vnet_address_space    = "10.0.0.0/16"
