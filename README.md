@@ -44,9 +44,9 @@ Platform -> Azure
 
 Resource Group -> 1
 
-Virtual Network -> 2
+Virtual Network -> 1
 
-Subnet -> 2 (1 for each vnet)
+Subnet -> 1
 
 Peering between Vnet
 
