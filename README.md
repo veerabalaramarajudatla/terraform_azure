@@ -19,6 +19,8 @@ We will get Client ID, Tentant ID from the App Registration
 
 # Topic Covered
 
+--> Git Hub Actions for terraform plan and apply
+
 --> Resource Group Creation
 (Resource Group and Location)
 
@@ -33,3 +35,29 @@ We will get Client ID, Tentant ID from the App Registration
 
 --> Load Balancer
 (Creating of one more VM and Setting up the load balancer)
+
+# Resource
+
+Backend terraform -> To get the State and Lock file to store the history
+
+Platform -> Azure
+
+Resource Group -> 1
+
+Virtual Network -> 2
+
+Subnet -> 2 (1 for each vnet)
+
+Peering between Vnet
+
+Network Security Group -> 1
+
+Network Interface Card -> 2
+
+Joined the Network Interface card and Network Security Group using Network Interface Security Group Association
+
+Virtual Machine -> 2
+
+Virtual Machine are attached with the Network Interface Card Respectively
+
+SSH Key created from old VM

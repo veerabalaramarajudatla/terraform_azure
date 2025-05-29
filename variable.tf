@@ -69,3 +69,8 @@ variable "nsubnet_address_prefix" {
   description = "Address prefix of the second Subnet"
   type        = list(string)
 }
+
+variable "nvm_name" {
+  description = "Name of the Virtual Machine"
+  type        = string
+}
