@@ -6,8 +6,16 @@ output "vnet_name" {
   value = azurerm_virtual_network.vnet.name
 }
 
+output "nvnet_name" {
+  value = azurerm_virtual_network.nvnet.name
+}
+
 output "subnet_id" {
   value = azurerm_subnet.subnet.id
+}
+
+output "nsubnet_id" {
+  value = azurerm_subnet.nsubnet.id
 }
 
 output "vm_name" {

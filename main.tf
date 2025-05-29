@@ -37,6 +37,38 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = var.subnet_address_prefix
 }
 
+resource "azurerm_virtual_network" "nvnet" {
+  name                = var.nvnet_name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  address_space       = [var.nvnet_address_space]
+}
+
+resource "azurerm_subnet" "nsubnet" {
+  name                 = var.nsubnet_name
+  resource_group_name  = var.resource_group_name
+  address_prefixes     = var.nsubnet_address_prefix
+  virtual_network_name = azurerm_virtual_network.nvnet.name
+}
+
+resource "azurerm_virtual_network_peering" "vnet1-to-vnet2" {
+  name                      = "vnet1-to-vnet2"
+  resource_group_name       = var.resource_group_name
+  virtual_network_name      = azurerm_virtual_network.vnet.name
+  remote_virtual_network_id = azurerm_virtual_network.nvnet.id
+  allow_forwarded_traffic      = true
+  allow_virtual_network_access = true
+}
+
+resource "azurerm_virtual_network_peering" "vnet2-to-vnet1" {
+  name                      = "vnet2-to-vnet1"
+  resource_group_name       = var.resource_group_name
+  virtual_network_name      = azurerm_virtual_network.nvnet.name
+  remote_virtual_network_id = azurerm_virtual_network.vnet.id
+  allow_forwarded_traffic      = true
+  allow_virtual_network_access = true
+}
+
 resource "azurerm_network_security_group" "nsg" {
   name                = "${var.vm_name}-nsg"
   location            = var.location
