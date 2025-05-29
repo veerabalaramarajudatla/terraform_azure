@@ -1,26 +1,26 @@
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                  = var.vm_name #Virtual Machine 1
-  location              = var.location #Region for my Infra
-  resource_group_name   = var.resource_group_name #My Resource Group
-  size                  = var.vm_size #VM Size
-  admin_username        = var.admin_user_name #VM User
-  network_interface_ids = [azurerm_network_interface.nic1.id] #Attached with Network Interface Card 1
+  name                  = var.vm_name
+  location              = var.location
+  resource_group_name   = var.resource_group_name
+  size                  = var.vm_size
+  admin_username        = var.admin_user_name
+  network_interface_ids = [azurerm_network_interface.nic1.id]
 
   admin_ssh_key {
-    username   = var.admin_user_name #ssh User
-    public_key = file(var.ssh_key) #ssh Key
+    username   = var.admin_user_name
+    public_key = file(var.ssh_key)
   }
 
   os_disk {
-    caching              = "ReadWrite" #Permissions
-    storage_account_type = "Standard_LRS" #Disk
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
   }
 
   source_image_reference {
-    publisher = "Canonical" #Publisher of OS
-    offer     = "UbuntuServer" #OS type
-    sku       = "18.04-LTS" #OS Version
-    version   = "latest" #Image
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "18.04-LTS"
+    version   = "latest"
   }
 
   tags = {
@@ -29,28 +29,28 @@ resource "azurerm_linux_virtual_machine" "vm" {
 }
 
 resource "azurerm_linux_virtual_machine" "nvm" {
-  name                  = var.nvm_name #Virtual Machine 2
-  location              = var.location #Region for my Infra
-  resource_group_name   = var.resource_group_name #My Resource Group
-  size                  = var.vm_size #VM Size
-  admin_username        = var.admin_user_name #VM User
-  network_interface_ids = [azurerm_network_interface.nic2.id] #Attached with Network Interface Card 2
+  name                  = var.nvm_name
+  location              = var.location
+  resource_group_name   = var.resource_group_name
+  size                  = var.vm_size
+  admin_username        = var.admin_user_name
+  network_interface_ids = [azurerm_network_interface.nic2.id]
 
   admin_ssh_key {
-    username   = var.admin_user_name #ssh User
-    public_key = file(var.ssh_key) #ssh Key
+    username   = var.admin_user_name
+    public_key = file(var.ssh_key)
   }
 
   os_disk {
-    caching              = "ReadWrite" #Permissions
-    storage_account_type = "Standard_LRS" #Disk
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
   }
 
   source_image_reference {
-    publisher = "Canonical" #Publisher of OS
-    offer     = "UbuntuServer" #OS type
-    sku       = "18.04-LTS" #OS Version
-    version   = "latest" #Image
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "18.04-LTS"
+    version   = "latest"
   }
 
   tags = {

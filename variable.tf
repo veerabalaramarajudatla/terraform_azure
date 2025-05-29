@@ -66,11 +66,11 @@ variable "nsubnet_name" {
 }
 
 variable "nsubnet_address_prefix" {
-  description = "Address prefix of the second Subnet"
+  description = "Address prefix for the second Subnet"
   type        = list(string)
 }
 
 variable "nvm_name" {
-  description = "Name of the Virtual Machine"
+  description = "Name of the second Virtual Machine"
   type        = string
 }
