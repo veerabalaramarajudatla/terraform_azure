@@ -44,7 +44,7 @@ resource "azurerm_virtual_network_peering" "vnet2-to-vnet1" {
   name                      = "vnet2-to-vnet1"
   resource_group_name       = var.resource_group_name #My Resource Group Name
   virtual_network_name      = azurerm_virtual_network.nvnet.name #Virtual Network 2
-  remote_virtual_network_id = azurerm_virtual_network.vnet.id #Virtual Network 1 as remote
+  remote_virtual_network_id = azurerm_virtual_network.vnet.id #Virtual Network 1 as a remote
   allow_forwarded_traffic      = true
   allow_virtual_network_access = true
 }
