@@ -24,12 +24,12 @@ resource "azurerm_lb_backend_address_pool" "lb_backend" {
 }
 
 resource "azurerm_lb_probe" "http_probe" {
-  name                = "http-probe"
-  loadbalancer_id     = azurerm_lb.my_lb.id
-  protocol            = "Tcp"
-  port                = 80
-  interval_in_seconds  = 5
-  number_of_probes    = 2
+  name               = "http-probe"
+  loadbalancer_id    = azurerm_lb.my_lb.id
+  protocol           = "Tcp"
+  port               = 80
+  interval_in_seconds = 5
+  number_of_probes   = 2
 }
 
 resource "azurerm_lb_rule" "http_rule" {
