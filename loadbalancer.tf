@@ -1,31 +1,31 @@
 resource "azurerm_public_ip" "lb_pip" {
-  name                = "my-lb-pip"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.rg.name
+  name                = "my-lb-pip" #Public IP Name
+  location            = var.location #Location for my Resource
+  resource_group_name = azurerm_resource_group.rg.name #Resource Group for my Infra
   allocation_method   = "Static"
-  sku                 = "Standard"
+  sku                 = "Standard" #Pricing
 }
 
 resource "azurerm_lb" "my_lb" {
-  name                = "my-loadbalancer"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "Standard"
+  name                = "my-loadbalancer" #Load Balancer Name
+  location            = var.location #Location for my Resource
+  resource_group_name = azurerm_resource_group.rg.name #Resource Group for my Infra
+  sku                 = "Standard" #Pricing
 
   frontend_ip_configuration {
     name                 = "my-lb-fe-ip"
-    public_ip_address_id = azurerm_public_ip.lb_pip.id
+    public_ip_address_id = azurerm_public_ip.lb_pip.id #Load Balancer Frontend IP
   }
 }
 
 resource "azurerm_lb_backend_address_pool" "lb_backend" {
   name            = "my-backend-pool"
-  loadbalancer_id = azurerm_lb.my_lb.id
+  loadbalancer_id = azurerm_lb.my_lb.id  #Load Balancer Backend IP
 }
 
 resource "azurerm_lb_probe" "http_probe" {
-  name               = "http-probe"
-  loadbalancer_id    = azurerm_lb.my_lb.id
+  name               = "http-probe" #Used for the Health Checks
+  loadbalancer_id    = azurerm_lb.my_lb.id 
   protocol           = "Tcp"
   port               = 80
   interval_in_seconds = 5
